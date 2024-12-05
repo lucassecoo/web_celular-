@@ -123,11 +123,11 @@ section .list {
 section > .list::before{
     content: '';
     border-top: 1px solid white;
-    top: 53.7%;
+    
     left: 11%;
     width: 85%;
     height: 200px;
-    position: absolute;
+    position: relative;
 }
 
 section .item{
