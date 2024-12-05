@@ -130,23 +130,27 @@ section > .list::before{
     position: absolute;
 }
 
-section .item {
+section .item{
     position: absolute;
     inset: 0;
+    /* transform: translateX(100vw); */
+    transition: 0.5s;
+    opacity: 1;
 }
 
-section .item .cel-image {
+/*REGULANDO AS IMAGENS e CONTEUDO IPHONE*/
+
+section #foto-iphone{
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); */
     left: 25%;
+    transition: 0.5s;
+    transition-delay: 0.3s;
+    width: 30%;
 }
 
-section .item .cel-image img {
-    width: 40%;
-}
-
-section .item .content {
+section #iphone-content{
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -155,29 +159,89 @@ section .item .content {
     align-items: end;
     justify-content: end;
     gap: 1.5%;
-    left: 32%;
+    left: 13%;
     top: -26.6%;
 }
 
-section .item .cel-information {
+/*REGULANDO AS IMAGENS e CONTEUDO SAMSUNG*/
+
+section #foto-samsung{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20%;
+    transition: 0.5s;
+    transition-delay: 0.3s;
+    width: 44%;
+}
+
+section #samsung-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60%;
+    align-items: end;
+    justify-content: end;
+    gap: 1.5%;
+    left: 13%;
+    top: -23.3%;
+}
+
+/*REGULANDO AS IMAGENS e CONTEUDO REDMI*/
+
+section #foto-redmi{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    transition: 0.5s;
+    transition-delay: 0.3s;
+    width: 37.6%;
+}
+
+section #redmi-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60%;
+    align-items: end;
+    justify-content: end;
+    gap: 1.5%;
+    left: 13%;
+    top: -26.6%;
+}
+*/
+
+section .item.active{
+    opacity: 1000;
+    transition: opacity 0.5s, transform 0.5s;
+    /* transform: translateX(0); */
+}
+
+section .cel-information{
     font-weight: bold;
     font-family: "Poppins", sans-serif;
     font-size: small;
+    transition-delay: 0.3s;
 }
 
-section .item h2 {
+section h2{
     font-size: 4.7em;
     line-height: 1em;
+    transition-delay: 0.5s;
 }
 
-section .item .description {
+section .description {
     color: #d9d9d9;
     font-size: 20px;
     text-align: right;
-    max-width: 400px;
+    max-width: 580px;
+    transition-delay: 0.7s;
 }
 
-section .item .saiba-mais {
+section .saiba-mais {
     border-radius: 30px;
     border: 2px solid #6b1cbb;
     background-color: #beff1b;
@@ -186,4 +250,11 @@ section .item .saiba-mais {
     font-weight: bold;
     color: black;
     text-transform: uppercase;
+    transition-delay: 0.9s;
+}
+
+section .cel-information, h2, .description, saiba-mais{
+    transition: 0.7s;
+    transition-delay: 0.3s;
+    transform: translateX(200px);
 }
