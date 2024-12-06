@@ -139,7 +139,6 @@ section > .list::before{
 .item {
     transform: translateX(100vw);
     transition: 0.5s;
-    opacity: 0;
 }
 
 /*AJUSTANDO IPHONE*/
@@ -151,9 +150,9 @@ section > .list::before{
 }
 
 .item.active#iphone .cel-image {
-    position: relative;
+    position: absolute;
     top: 50%;
-    transform: translateY(-77%);
+    transform: translateY(10%);
     left: 16%;
     transition: 0.5s;
     transition-delay: 0.3s;
@@ -169,12 +168,110 @@ section > .list::before{
     justify-content: end;
     gap: 1.5%;
     left: 32%;
-    top: -36%;
+    top: -32%;
+}
+
+.item.active#iphone .cel-image img {
+    width: 33.2%;
+}
+
+/*IPHONE*/
+
+/*SAMSUNG*/
+
+.item.active#samsung{
+    transform: translateX(-110vw);
+    transition: 0.5s;
+    opacity: 1;
+}
+
+.item.active#samsung .cel-image {
+    position: relative;
+    top: 50%;
+    transform: translateY(-77%);
+    left: -43%;
+    transition: 0.5s;
+    transition-delay: 0.3s;
+}
+
+.item.active#samsung .content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60%;
+    align-items: end;
+    justify-content: end;
+    gap: 1.5%;
+    left: 32%;
+    top: -33%;
 }
 
 section .item .cel-image img {
-    width: 33.2%;
+    width: 74.7%;
 }
+
+.item.active#samsung .description {
+    color: #d9d9d9;
+    font-size: 24px;
+    text-align: right;
+    width: 650px;
+    transition-delay: 0.7s;
+}
+
+/*SAMSUNG*/
+
+/*XIAOMI*/
+.item.active#xiaomi{
+    transform: translateX(-228vw);
+    transition: 0.5s;
+    opacity: 1;
+}
+
+.item.active#xiaomi .cel-image {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -80%;
+    transition: 0.5s;
+    transition-delay: 0.3s;
+}
+
+.item.active#xiaomi .cel-image img {
+    width: 105%;
+}
+
+.item.active#xiaomi .content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60%;
+    align-items: end;
+    justify-content: end;
+    gap: 1.5%;
+    left: 90%;
+    top: -70%;
+}
+
+.item.active#xiaomi h2{
+    width: 125%;
+}
+
+.item.active#xiaomi .description {
+    color: #d9d9d9;
+    font-size: 24px;
+    text-align: right;
+    width: 650px;
+    transition-delay: 0.5s;
+}
+
+#xiaomi button.saiba-mais:hover{
+    background-color: white;
+    transition: 0.2s;
+}
+
+/*XIAOMI*/
 
 section .item .content {
     position: absolute;
@@ -185,28 +282,28 @@ section .item .content {
     align-items: end;
     justify-content: end;
     gap: 1.5%;
-    left: 32%;
-    top: -26.6%;
+    left: 50%;
+    top: -37%;
 }
 
 section .item .cel-information {
     font-weight: bold;
     font-family: "Poppins", sans-serif;
     font-size: small;
-    transition-delay: 0.9s;
+    transition-delay: 0.6s;
 }
 
 section .item h2 {
     font-size: 4.7em;
     line-height: 1em;
-    transition-delay: 0.5s;
+    transition-delay: 0.4s;
 }
 
 section .item .description {
     color: #d9d9d9;
-    font-size: 20px;
+    font-size: 24px;
     text-align: right;
-    max-width: 400px;
+    max-width: 480px;
     transition-delay: 0.7s;
 }
 
@@ -225,11 +322,11 @@ section .item .saiba-mais {
 /*animaçao texto*/
 
 .cel-information, h2, .description, .saiba-mais{
-    transition: 0.7s;
+    transition: 0.5s;
     transition-delay: 0.3s;
 }
 
-section .item .saiba-mais:hover{
+section .item.active .saiba-mais:hover{
     background-color: white;
     transition: 0.2s;
 }
