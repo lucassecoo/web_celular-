@@ -1,29 +1,41 @@
-// // Seleciona todos os itens
-const items = document.querySelectorAll('.item');
-let currentIndex = 0; // Índice do item atualmente ativo
+let voltaBtn = document.getElementById('seta-dir')
+let proxBtn = document.getElementById('seta-esq')
+let container = document.querySelector('.container')
+let itens = container.querySelectorAll('.list .item')
+let indicador = document.querySelector('.indicador')
+let dots = indicador.querySelectorAll('ul li')
+let number =indicador.querySelector('.number')
+let list = document.querySelector('.list')
 
-// Função para atualizar o item ativo
-function updateActiveItem(newIndex) {
-    // Remove a classe 'active' de todos os itens
-    items.forEach(item => item.classList.remove('active'));
-    // Adiciona a classe 'active' ao novo item
-    items[newIndex].classList.add('active');
+let active = 0
+let primeiraPos = 0
+let ultimaPos = 2
+
+
+voltaBtn.onclick = () => {
+    let itemOld = container.querySelector('.list .item.active')
+    itemOld.classList.remove('active')
+    
+    active = active - 1 < primeiraPos ? ultimaPos : active - 1
+    itens[active].classList.add('active')
+
+    let dotsOld = indicador.querySelector('ul li.active')
+    dotsOld.classList.remove('active')
+    dots[active].classList.add('active')
+
+    indicador.querySelector('.number').innerHTML = `0${active + 1}`
 }
 
-// Função para ir para o próximo item
-function proximo() {
-    // Atualiza o índice para o próximo item, voltando ao início se estiver no último
-    currentIndex = (currentIndex + 1) % items.length;
-    updateActiveItem(currentIndex);
-}
+proxBtn.onclick = () => {
+    let itemOld = container.querySelector('.list .item.active')
+    itemOld.classList.remove('active')
+    
+    active = active + 1 > ultimaPos ? 0 : active + 1
+    itens[active].classList.add('active')
 
-// Função para ir para o item anterior
-function volta() {
-    // Atualiza o índice para o item anterior, indo para o último se estiver no primeiro
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-    updateActiveItem(currentIndex);
-}
+    let dotsOld = indicador.querySelector('ul li.active')
+    dotsOld.classList.remove('active')
+    dots[active].classList.add('active')
 
-// Event listeners para os botões
-document.getElementById('seta-dir').addEventListener('click', proximo);
-document.getElementById('seta-esq').addEventListener('click', volta);
+    indicador.querySelector('.number').innerHTML = `0${active + 1}`
+}

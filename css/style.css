@@ -40,6 +40,13 @@ header nav ul {
     grid-template-columns: repeat(3, 200px);
 }
 
+header nav ul li:hover{
+    color: #beff1b;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
 section {
     background-image: radial-gradient(#7f3d9e, #6d00d9);
     height: 100vh;
@@ -124,6 +131,7 @@ section .list {
     width: 70vw;
     height: 100%;
     transform: translateY(31vw);
+    --calcular: 1;
 }
 
 section > .list::before{
@@ -138,10 +146,21 @@ section > .list::before{
 
 .item {
     transform: translateX(100vw);
-    transition: 0.5s;
+    transition: 0s;
 }
 
+.cel-image{
+    transform: translateX(100vw);
+}
+
+
+
+
 /*AJUSTANDO IPHONE*/
+
+#iphone .cel-image{
+    transform: translateY(-102%);
+}
 
 .item.active#iphone{
     transform: translateX(0vw);
@@ -152,33 +171,55 @@ section > .list::before{
 .item.active#iphone .cel-image {
     position: absolute;
     top: 50%;
-    transform: translateY(-88%);
+    transform: translateY(-78%);
     left: 16%;
     transition: 0.5s;
     transition-delay: 0.3s;
+}
+
+/*SOMBRA*/
+#iphone .cel-image::before {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 238px;
+    height: 68px;
+    top: 119%;
+    left: 17%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    filter: blur(30px);
 }
 
 .item.active#iphone .content {
     position: absolute;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 105%;
     width: 60%;
     align-items: end;
     justify-content: end;
     gap: 1.5%;
     left: 32%;
     transform: translateY(-88%);
-    margin-top: 10px;
+    margin-top: 3px;
 }
 
 .item.active#iphone .cel-image img {
-    width: 33.2%;
+    width: 35%;
+}
+
+.item.active#iphone .content {
+    height: 300px;
 }
 
 /*IPHONE*/
 
 /*SAMSUNG*/
+
+#samsung .cel-image{
+    transform: translateY(-90%);
+}
 
 .item.active#samsung{
     transform: translateX(-110vw);
@@ -195,21 +236,34 @@ section > .list::before{
     transition-delay: 0.3s;
 }
 
+.item.active#samsung .cel-image::before {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 215px;
+    height: 68px;
+    top: 480px;
+    left: 220px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    filter: blur(30px);
+}
+
 .item.active#samsung .content {
     position: absolute;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 121.5%;
     width: 60%;
     align-items: end;
     justify-content: end;
     gap: 1.5%;
     left: 32%;
-    top: -33%;
+    top: -48.2%;
 }
 
 section .item .cel-image img {
-    width: 74.7%;
+    width: 71%;
 }
 
 .item.active#samsung .description {
@@ -219,6 +273,7 @@ section .item .cel-image img {
     width: 650px;
     transition-delay: 0.7s;
 }
+
 
 /*SAMSUNG*/
 
@@ -232,14 +287,27 @@ section .item .cel-image img {
 .item.active#xiaomi .cel-image {
     position: relative;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-55%);
     left: -80%;
     transition: 0.5s;
     transition-delay: 0.3s;
 }
 
+.item.active#xiaomi .cel-image::before {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 230px;
+    height: 68px;
+    top: 450px;
+    left: 190px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    filter: blur(30px);
+}
+
 .item.active#xiaomi .cel-image img {
-    width: 105%;
+    width: 101.2%;
 }
 
 .item.active#xiaomi .content {
@@ -252,7 +320,7 @@ section .item .cel-image img {
     justify-content: end;
     gap: 1.5%;
     left: 90%;
-    top: -70%;
+    top: -68%;
 }
 
 .item.active#xiaomi h2{
@@ -267,9 +335,12 @@ section .item .cel-image img {
     transition-delay: 0.5s;
 }
 
-#xiaomi button.saiba-mais:hover{
+.item .saiba-mais:hover {
     background-color: white;
-    transition: 0.2s;
+    color: #6b1cbb;
+    border-color: #beff1b;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 /*XIAOMI*/
@@ -312,8 +383,8 @@ section .item .saiba-mais {
     border-radius: 30px;
     border: 2px solid #6b1cbb;
     background-color: #beff1b;
-    height: 35px;
-    width: 120px;
+    height: 40px;
+    width: 127px;
     font-weight: bold;
     color: black;
     text-transform: uppercase;
@@ -322,18 +393,13 @@ section .item .saiba-mais {
 
 /*animaçao texto*/
 
-.cel-information, h2, .description, .saiba-mais{
-    transition: 0.5s;
+/* .item.active .item.cel-information,.active h2, .item.active .description, .item.active .saiba-mais{
+    transition: 0.7s;
     transition-delay: 0.3s;
-}
+} */
 
-section .item.active .saiba-mais:hover{
-    background-color: white;
-    transition: 0.2s;
-}
 
 div#detalhes{
     transform: translateX(0);
     display: block;
-    z-index: 10;
 }
