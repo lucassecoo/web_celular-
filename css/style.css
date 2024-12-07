@@ -152,7 +152,7 @@ section > .list::before{
 .item.active#iphone .cel-image {
     position: absolute;
     top: 50%;
-    transform: translateY(10%);
+    transform: translateY(-88%);
     left: 16%;
     transition: 0.5s;
     transition-delay: 0.3s;
@@ -168,7 +168,8 @@ section > .list::before{
     justify-content: end;
     gap: 1.5%;
     left: 32%;
-    top: -32%;
+    transform: translateY(-88%);
+    margin-top: 10px;
 }
 
 .item.active#iphone .cel-image img {

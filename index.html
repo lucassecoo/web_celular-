@@ -26,7 +26,7 @@
     </header>
     <section>
         <div class="list">
-            <div class="item" id="iphone">
+            <div class="item active" id="iphone">
                 <div class="cel-image">
                     <img src="img/iPhone-16-removebg.png" alt="">
                 </div>
@@ -57,7 +57,7 @@
                 <div>
             <div>
             
-                <div class="item active" id="xiaomi">
+                <div class="item" id="xiaomi">
                     <div class="cel-image">
                         <img src="img/Redmi-Note-12.png" alt="">
                     </div>
@@ -76,8 +76,8 @@
         <div id="detalhes">
     
             <div class="arrow">
-                <button id="seta-dir"><img src="img/arrow.png" alt="seta direita"></button>
-                <button><img src="img/arrow.png" alt="seta esquerda"></button>
+                <button id="seta-dir" onclick="volta()"><img src="img/arrow.png" alt="seta direita"></button>
+                <button id="seta-esq" onclick="proximo()"><img src="img/arrow.png" alt="seta esquerda"></button>
     
             </div>
             <div class="indicador">
@@ -89,5 +89,6 @@
                 </ul>
             </div>
         </div>
+    <script src="javascript/index.js"></script>
 </body>
 </html>

@@ -1,44 +1,29 @@
-// let setadir = document.querySelector('#seta-dir')
-// let setaesq = document.querySelector('#seta-esq')
-// let container = document.querySelector('.container')
-// let items = container.querySelectorAll('.list .item')
-// let indicador = document.querySelector('.indicador')
-// let pontoIndicador = indicador.querySelectorAll('ul li')
-// let active = 0
-// let PrimeiraPosicao = 0
-// let ultimaPosicao = items.length - 1
+// // Seleciona todos os itens
+const items = document.querySelectorAll('.item');
+let currentIndex = 0; // Índice do item atualmente ativo
 
+// Função para atualizar o item ativo
+function updateActiveItem(newIndex) {
+    // Remove a classe 'active' de todos os itens
+    items.forEach(item => item.classList.remove('active'));
+    // Adiciona a classe 'active' ao novo item
+    items[newIndex].classList.add('active');
+}
 
-// function proximo(){
-//     let itemOld = container.querySelector('.list .active');
-//     if (itemOld) {
+// Função para ir para o próximo item
+function proximo() {
+    // Atualiza o índice para o próximo item, voltando ao início se estiver no último
+    currentIndex = (currentIndex + 1) % items.length;
+    updateActiveItem(currentIndex);
+}
 
-//         itemOld.classList.remove('active');
-//         itemOld.classList.add('item'); // Substitui por "item"
-//     }
+// Função para ir para o item anterior
+function volta() {
+    // Atualiza o índice para o item anterior, indo para o último se estiver no primeiro
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    updateActiveItem(currentIndex);
+}
 
-//     if (active + 1 > ultimaPosicao) {
-//         active = 0;
-//     } else {
-//         active ++;
-//     }
-
-//     items[active].classList.remove('item');
-//     items[active].classList.add('active');
-// }
-
-// function volta(){
-//     let itemOld = container.querySelector('.list .active');
-//     if (itemOld) {
-//         itemOld.classList.remove('active');
-//         itemOld.classList.add('item'); // Substitui por "item"
-//     }
-
-//     if (active - 1 < PrimeiraPosicao) {
-//         active = ultimaPosicao;
-//     } else {
-//         active--;
-//     }
-//     items[active].classList.remove('item');
-//     items[active].classList.add('active');
-// }
+// Event listeners para os botões
+document.getElementById('seta-dir').addEventListener('click', proximo);
+document.getElementById('seta-esq').addEventListener('click', volta);
