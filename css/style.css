@@ -48,7 +48,7 @@ header nav ul li:hover{
 }
 
 section {
-    background-image: radial-gradient(#7f3d9e, #6d00d9);
+    background-image: radial-gradient(#001F1D, #00635D);
     height: 100vh;
     position: relative;
 }
@@ -174,7 +174,6 @@ section > .list::before{
     transform: translateY(-78%);
     left: 16%;
     transition: 0.5s;
-    transition-delay: 0.3s;
 }
 
 /*SOMBRA*/
@@ -335,12 +334,12 @@ section .item .cel-image img {
     transition-delay: 0.5s;
 }
 
-.item .saiba-mais:hover {
+.saiba-mais button:hover {
     background-color: white;
-    color: #6b1cbb;
-    border-color: #beff1b;
+    background-image: white;
     cursor: pointer;
     transition: 0.3s;
+    z-index: 5;
 }
 
 /*XIAOMI*/
@@ -379,25 +378,16 @@ section .item .description {
     transition-delay: 0.7s;
 }
 
-section .item .saiba-mais {
+.saiba-mais {
     border-radius: 30px;
-    border: 2px solid #6b1cbb;
+    border: 1px solid #00635D;
     background-color: #beff1b;
     height: 40px;
     width: 127px;
     font-weight: bold;
     color: black;
     text-transform: uppercase;
-    z-index: 10;
 }
-
-/*animaçao texto*/
-
-/* .item.active .item.cel-information,.active h2, .item.active .description, .item.active .saiba-mais{
-    transition: 0.7s;
-    transition-delay: 0.3s;
-} */
-
 
 div#detalhes{
     transform: translateX(0);
